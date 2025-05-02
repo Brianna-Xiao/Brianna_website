@@ -414,7 +414,7 @@ nav {
 }
 
 .portfolio-item[data-category="digital-art"] .portfolio-image {
-    height: 180px;
+    max-height: 220px;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -423,9 +423,11 @@ nav {
 }
 
 .portfolio-item[data-category="digital-art"] .portfolio-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .portfolio-item[data-category="paintings"] .portfolio-image {
