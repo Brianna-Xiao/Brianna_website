@@ -414,16 +414,18 @@ nav {
 }
 
 .portfolio-item[data-category="digital-art"] .portfolio-image {
+    height: 180px;
     width: 100%;
-    height: auto;
-    aspect-ratio: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .portfolio-item[data-category="digital-art"] .portfolio-image img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .portfolio-item[data-category="paintings"] .portfolio-image {
