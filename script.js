@@ -161,4 +161,14 @@ style.textContent = `
     }
 `;
 
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Example filtering code
+const category = this.getAttribute('data-category');
+portfolioItems.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+        item.style.display = 'block';
+    } else {
+        item.style.display = 'none';
+    }
+}); 
