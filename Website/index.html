@@ -30,23 +30,68 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="profile-section">
-                    <div class="profile-image">
-                        <img src="assets/profile/Brianna_headshot.png" alt="Brianna Xiao" class="front">
-                        <img src="assets/profile/Brianna_drawing.jpg" alt="Brianna's Drawing" class="back">
+            <div class="hero-panel">
+                <div class="hero-topbar">
+                    <div class="hero-pills">
+                        <span class="pill">Home</span>
+                        <span class="pill">Works</span>
+                        <span class="pill">Artists</span>
+                        <span class="pill">Contact</span>
                     </div>
-                    <div class="hero-text">
-                        <div class="name-container">
-                            <h1>Brianna <span class="highlight">Xiao</span></h1>
-                            <div class="subtitle">Developer · Designer · Creator</div>
+                    <button class="contact-pill">Contact us</button>
+                </div>
+
+                <div class="hero-body">
+                    <div class="hero-copy">
+                        <span class="hero-sticker">Original Artwork</span>
+                        <div class="hero-title-stack">
+                            <span class="hero-title-line hero-title-front">BRIANNA</span>
+                            <span class="hero-title-blob"></span>
+                            <span class="hero-title-line hero-title-back">XIAO</span>
                         </div>
-                        <div class="about-text">
-                            <p class="intro-text">Hi! My name is Brianna Xiao. I am a Computer Science student at Western University, graduating in 2028. Outside of school, I love cooking, painting, making crafts, and playing violin.</p>
-                            <p class="intro-text">Thanks for viewing my website, make sure to check out my projects and portfolio :)</p>
+                        <p class="hero-subtext">
+                            Welcome to our creative space! Explore a diverse collection of vibrant works that burst with color, imagination, and originality.
+                        </p>
+                        <div class="hero-cta">
+                            <button class="btn-soft">Explore</button>
+                            <button class="btn-ghost">Learn more</button>
                         </div>
+                    </div>
+
+                    <div class="hero-figure">
+                        <img src="assets/portfolio/digital art/IMG_1594.jpg" alt="Hero artwork">
+                    </div>
+
+                    <div class="hero-badge-circle">
+                        <span>Design</span>
+                        <span>Motion</span>
+                        <span>Artistry</span>
+                        <span>Color</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-visual about-layer">
+                <div class="blob blob-one"></div>
+                <div class="blob blob-two"></div>
+                <div class="about-card">
+                    <p class="eyebrow">About</p>
+                    <h2>Creative technologist crafting bold visuals.</h2>
+                    <p class="about-body">
+                        I blend code, color, and concept to build immersive digital stories.
+                        With roots in design and development, I translate ideas into layered experiences
+                        that feel premium, editorial, and artful.
+                    </p>
+                    <div class="about-tags">
+                        <span class="pill soft">Design Systems</span>
+                        <span class="pill soft">Creative Coding</span>
+                        <span class="pill soft">Visual Identity</span>
+                        <span class="pill soft">Interactive UI</span>
+                    </div>
+                </div>
+                <div class="about-sticker">Art-forward</div>
             </div>
         </section>
 
@@ -301,71 +346,105 @@
 
         <section id="experience" class="experience">
             <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2024 - Present</div>
-                    <div class="timeline-content">
+            <div class="exp-viewport">
+                <div class="exp-track">
+                    <svg class="exp-path" viewBox="0 0 2400 380" preserveAspectRatio="none">
+                        <path id="exp-line" d="M40,280 C220,200 340,340 520,250 C700,160 840,360 1020,240 C1220,120 1360,360 1540,240 C1720,120 1860,340 2060,220 C2220,140 2340,260 2360,220" />
+                    </svg>
+
+                    <div class="exp-bubble" data-progress="0.05">
+                        <p class="exp-date">Oct 2024 – Present</p>
                         <h3>Director of Projects</h3>
-                        <h4>Western Founders Network</h4>
-                        <p>London, ON</p>
-                        <p>Worked in full-stack development projects with HTML, CSS, JavaScript, and Java, emphasizing entrepreneurial problem solving to create user-friendly, dynamic web applications.</p>
-                        <p>Fostered collaboration across a diverse team to develop responsive designs that address real-world problems, aligning with business needs and innovative solutions.</p>
+                        <p class="exp-org">Western Founders Network · London, ON</p>
+                        <ul>
+                            <li>Led full-stack builds (React Native, Firebase) with rapid iteration.</li>
+                            <li>Drove product problem-solving and cross-team collaboration.</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2024 - Present</div>
-                    <div class="timeline-content">
-                        <h3>VP of Communications</h3>
-                        <h4>Kpop Western</h4>
-                        <p>London, ON</p>
-                        <p>Designed all Kpop western social media content, including instagram posts, reels, and merch</p>
-                        <p>Works with Canva, Figma, Adobe Photoshop, and Gravit</p>
+                    <div class="exp-bubble" data-progress="0.22">
+                        <p class="exp-date">Oct 2024 – Present</p>
+                        <h3>VP Communications</h3>
+                        <p class="exp-org">Kpop Western · London, ON</p>
+                        <ul>
+                            <li>Owned social/merch creative across IG, reels, and campaigns.</li>
+                            <li>Tools: Canva, Figma, Photoshop; consistent brand voice.</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2024 - Present</div>
-                    <div class="timeline-content">
+                    <div class="exp-bubble" data-progress="0.38">
+                        <p class="exp-date">Oct 2024 – Present</p>
                         <h3>Director of Events</h3>
-                        <h4>Western Computer Science Undergrad Society</h4>
-                        <p>London, ON</p>
-                        <p>Spearheaded planning and execution of club-wide events, focusing on fostering networking opportunities for students.</p>
-                        <p>Managed budgets, schedules, and resources for events, ensuring high engagement amongst club members.</p>
+                        <p class="exp-org">Western CS Undergrad Society · London, ON</p>
+                        <ul>
+                            <li>Planned networking events end-to-end with budget & ops.</li>
+                            <li>Boosted engagement through UX-minded programming.</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2023 - Jun 2024</div>
-                    <div class="timeline-content">
+                    <div class="exp-bubble" data-progress="0.55">
+                        <p class="exp-date">Sep 2023 – Jun 2024</p>
                         <h3>President</h3>
-                        <h4>STR Debate Club</h4>
-                        <p>Thornhill, ON</p>
-                        <p>Led a team of 150+ members and 13 executives, fostering leadership and teamwork.</p>
-                        <p>Managed logistics for regional and national tournaments, ensuring smooth operations and participant success.</p>
-                        <p>Collaboratively Organized both the 2023 and 2024 United Nations York Catholic Assembly with 300+ competitors.</p>
+                        <p class="exp-org">STR Debate Club · Thornhill, ON</p>
+                        <ul>
+                            <li>Led 150+ members, 13 execs; ran regional/national events.</li>
+                            <li>Co-organized UN York Catholic Assembly (300+ competitors).</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-bubble" data-progress="0.72">
+                        <p class="exp-date">Sep 2023 – Jun 2024</p>
+                        <h3>Media Manager / Outreach</h3>
+                        <p class="exp-org">Toronto Global Spotlight · Thornhill, ON</p>
+                        <ul>
+                            <li>Raised $1,725 via large-scale fundraising tournament.</li>
+                            <li>Built partnerships with community leaders for impact.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-bubble" data-progress="0.9">
+                        <p class="exp-date">Sep 2023 – Jun 2024</p>
+                        <h3>Hospitality & Tourism Sr. Executive</h3>
+                        <p class="exp-org">STR DECA · Thornhill, ON</p>
+                        <ul>
+                            <li>Directed a top-performing DECA branch; coached competitors.</li>
+                            <li>Developed strategy playbooks for business case success.</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2023 - Jun 2024</div>
-                    <div class="timeline-content">
-                        <h3>Media Manager/Outreach</h3>
-                        <h4>Toronto Global Spotlight</h4>
-                        <p>Thornhill, ON</p>
-                        <p>Organized a large-scale fundraising tournament that raised $1,725 to support Toronto refugee centers, showcasing leadership and entrepreneurial spirit in non-profit initiatives.</p>
-                        <p>Collaborated with community leaders and school representatives to develop strategic partnerships and promote ongoing initiatives focused on tackling systemic injustices.</p>
+        <section id="contact" class="contact">
+            <div class="contact-inner">
+                <div class="contact-copy">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let’s build something expressive.</h2>
+                    <p class="contact-body">Reach out for collaborations, commissions, or just to say hello. I’m always excited to explore colorful, layered ideas.</p>
+                    <div class="contact-actions">
+                        <a class="btn-soft" href="mailto:bxiao7@uwo.ca">Email Me</a>
+                        <a class="btn-ghost" href="https://www.linkedin.com/in/brianna-xiao-4ab3b4232/" target="_blank">LinkedIn</a>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2023 - Jun 2024</div>
-                    <div class="timeline-content">
-                        <h3>Hospitality and Tourism Branch Senior Executive</h3>
-                        <h4>STR DECA</h4>
-                        <p>Thornhill, ON</p>
-                        <p>Directed the second-largest branch of the school's DECA chapter, leading a team to consistently rank in top competitions.</p>
-                        <p>Developed and implemented strategies to enhance performance in business case studies, applying entrepreneurial thinking.</p>
+                <div class="contact-card">
+                    <div class="contact-label">Available for projects</div>
+                    <div class="contact-grid">
+                        <div>
+                            <p class="label">Location</p>
+                            <p class="value">Toronto · London, ON</p>
+                        </div>
+                        <div>
+                            <p class="label">Email</p>
+                            <p class="value">bxiao7@uwo.ca</p>
+                        </div>
+                        <div>
+                            <p class="label">Instagram</p>
+                            <p class="value">@bri._.xinyi</p>
+                        </div>
+                        <div>
+                            <p class="label">Portfolio</p>
+                            <p class="value">brianna-xiao.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -401,28 +480,24 @@
         <p>&copy; 2024 Brianna Xiao</p>
     </footer>
 
-    <script>
+        <script>
         // Portfolio Filtering
         document.addEventListener("DOMContentLoaded", () => {
             const categoryButtons = document.querySelectorAll(".category-btn");
             const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-            // Function to filter portfolio items
             function filterPortfolio(category) {
-                // Hide all items first
                 portfolioItems.forEach(item => {
                     item.style.display = "none";
                     item.classList.remove("active");
                 });
 
-                // Show items of selected category
                 const selectedItems = document.querySelectorAll(`.portfolio-item[data-category="${category}"]`);
                 selectedItems.forEach(item => {
                     item.style.display = "block";
                     item.classList.add("active");
                 });
 
-                // Update active button
                 categoryButtons.forEach(btn => {
                     btn.classList.remove("active");
                     if (btn.getAttribute("data-category") === category) {
@@ -431,7 +506,6 @@
                 });
             }
 
-            // Add click event listeners to category buttons
             categoryButtons.forEach(btn => {
                 btn.addEventListener("click", () => {
                     const category = btn.getAttribute("data-category");
@@ -439,8 +513,206 @@
                 });
             });
 
-            // Set initial active category
             filterPortfolio("digital-art");
+        });
+
+        // Layered parallax title reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const heroPanel = document.querySelector(".hero-panel");
+            const titleFront = document.querySelector(".hero-title-front");
+            const titleBack = document.querySelector(".hero-title-back");
+            const titleBlob = document.querySelector(".hero-title-blob");
+
+            if (!heroPanel || !titleFront || !titleBack || !titleBlob) return;
+
+            const handleParallax = () => {
+                const scrollY = window.scrollY || window.pageYOffset;
+                const max = 500; // how much scroll drives the effect
+                const progress = Math.min(1, Math.max(0, scrollY / max));
+
+                const frontY = progress * -24; // lift more
+                const backY = 24 - progress * 42; // rise up
+                const blobX = progress * 48; // slide blob
+                const backOpacity = Math.max(0, Math.min(1, progress * 1.4));
+
+                titleFront.style.transform = `translateY(${frontY}px)`;
+                titleBack.style.transform = `translateY(${backY}px)`;
+                titleBack.style.opacity = backOpacity;
+                titleBlob.style.transform = `translateX(${blobX}px)`;
+            };
+
+            window.addEventListener("scroll", handleParallax, { passive: true });
+            window.addEventListener("resize", handleParallax);
+            handleParallax();
+        });
+
+        // Experience horizontal progress + reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const viewport = document.querySelector(".exp-viewport");
+            const track = document.querySelector(".exp-track");
+            const path = document.getElementById("exp-line");
+            const bubbles = document.querySelectorAll(".exp-bubble");
+            const expSection = document.querySelector(".experience");
+
+            if (!viewport || !track || !path || !bubbles.length || !expSection) return;
+
+            const pathLength = path.getTotalLength();
+            path.style.strokeDasharray = `${pathLength} ${pathLength}`;
+            path.style.strokeDashoffset = pathLength;
+
+            const state = {
+                progress: 0,
+                isLocked: false,
+                lockScrollY: 0,
+                lastTouchY: null,
+            };
+
+            const applyProgress = (progress) => {
+                const viewportW = viewport.clientWidth;
+                const trackW = track.scrollWidth;
+                const clamped = Math.min(1, Math.max(0, progress));
+                state.progress = clamped;
+
+                const translate = -(trackW - viewportW) * clamped;
+                track.style.transform = `translateX(${translate}px)`;
+                path.style.strokeDashoffset = pathLength * (1 - clamped);
+
+                bubbles.forEach(bubble => {
+                    const p = parseFloat(bubble.dataset.progress || "0");
+                    if (clamped >= p - 0.05) {
+                        bubble.classList.add("visible");
+                    } else {
+                        bubble.classList.remove("visible");
+                    }
+                });
+            };
+
+            const checkSectionPosition = () => {
+                const rect = expSection.getBoundingClientRect();
+                const vh = window.innerHeight;
+                const sectionTop = rect.top;
+                const sectionBottom = rect.bottom;
+                
+                // Section is in viewport (more lenient detection)
+                const inViewport = sectionTop < vh && sectionBottom > 0;
+                
+                // Lock when section is in viewport and we haven't reached the end
+                if (inViewport && state.progress < 1) {
+                    if (!state.isLocked) {
+                        state.isLocked = true;
+                        state.lockScrollY = window.scrollY;
+                    }
+                    return true;
+                }
+                
+                // Unlock if we've reached the end or scrolled past
+                if (state.progress >= 1 || !inViewport) {
+                    if (state.isLocked) {
+                        state.isLocked = false;
+                    }
+                    return false;
+                }
+                
+                return state.isLocked;
+            };
+
+            const handleWheel = (e) => {
+                const shouldLock = checkSectionPosition();
+                
+                if (!shouldLock) {
+                    // Normal scrolling
+                    return;
+                }
+                
+                // Convert vertical scroll to horizontal progress
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // More responsive scroll speed
+                const scrollSpeed = 0.003;
+                const delta = e.deltaY * scrollSpeed;
+                const newProgress = state.progress + delta;
+                
+                // Clamp progress between 0 and 1
+                if (newProgress < 0) {
+                    // Allow scrolling up past the section
+                    state.isLocked = false;
+                    state.progress = 0;
+                    applyProgress(0);
+                    return;
+                }
+                
+                if (newProgress > 1) {
+                    // Reached the end, unlock and allow normal scroll
+                    applyProgress(1);
+                    state.isLocked = false;
+                    // Allow a bit of scroll past to continue
+                    window.scrollTo(0, state.lockScrollY + 50);
+                    return;
+                }
+                
+                applyProgress(newProgress);
+                
+                // Keep page scroll position locked
+                window.scrollTo(0, state.lockScrollY);
+            };
+
+            const handleTouchMove = (e) => {
+                const shouldLock = checkSectionPosition();
+                
+                if (!shouldLock || state.lastTouchY === null) {
+                    return;
+                }
+                
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const currentY = e.touches[0].clientY;
+                const deltaY = state.lastTouchY - currentY;
+                state.lastTouchY = currentY;
+                
+                // More responsive scroll speed
+                const scrollSpeed = 0.003;
+                const delta = deltaY * scrollSpeed;
+                const newProgress = state.progress + delta;
+                
+                if (newProgress < 0) {
+                    state.isLocked = false;
+                    state.progress = 0;
+                    applyProgress(0);
+                    return;
+                }
+                
+                if (newProgress > 1) {
+                    applyProgress(1);
+                    state.isLocked = false;
+                    window.scrollTo(0, state.lockScrollY + 50);
+                    return;
+                }
+                
+                applyProgress(newProgress);
+                window.scrollTo(0, state.lockScrollY);
+            };
+
+            window.addEventListener("wheel", handleWheel, { passive: false });
+            
+            window.addEventListener("touchstart", (e) => {
+                state.lastTouchY = e.touches[0].clientY;
+            }, { passive: true });
+
+            window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+            window.addEventListener("touchend", () => {
+                state.lastTouchY = null;
+            }, { passive: true });
+
+            // Initialize
+            applyProgress(0);
+            
+            // Update on scroll to handle programmatic scrolling
+            window.addEventListener("scroll", () => {
+                checkSectionPosition();
+            }, { passive: true });
         });
     </script>
 </body>
