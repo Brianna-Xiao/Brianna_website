@@ -308,6 +308,26 @@ nav {
     width: 100%;
 }
 
+.nav-resume-btn {
+    background: linear-gradient(120deg, var(--hero-accent), var(--hero-accent-2));
+    color: #1c2a0f !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 999px;
+    font-weight: 500 !important;
+    box-shadow: 0 4px 12px rgba(155, 191, 108, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-resume-btn::after {
+    display: none;
+}
+
+.nav-resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(155, 191, 108, 0.4);
+    color: #1c2a0f !important;
+}
+
 .burger {
     display: none;
     cursor: pointer;
