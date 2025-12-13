@@ -1,140 +1,174 @@
-// Portfolio filtering functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all category buttons and portfolio items
-    const categoryButtons = document.querySelectorAll('.portfolio-categories button');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+// Portfolio Filtering
+document.addEventListener("DOMContentLoaded", () => {
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-    // Add click event listeners to category buttons
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get the category from the button's data attribute
-            const category = this.getAttribute('data-category');
-            
-            // Filter portfolio items
-            filterPortfolio(category);
-        });
-    });
+    categoryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Remove "active" class from all buttons
+            categoryButtons.forEach(button => button.classList.remove("active"));
+            // Add "active" class to the clicked button
+            btn.classList.add("active");
 
-    // Function to filter portfolio items
-    function filterPortfolio(category) {
-        portfolioItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            
-            if (category === 'all' || itemCategory === category) {
-                item.style.display = 'block';
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            } else {
-                item.style.display = 'none';
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-            }
-        });
-    }
+            const selectedCategory = btn.getAttribute("data-category");
 
-    // Mobile navigation toggle
-    const burgerIcon = document.querySelector('.burger-icon');
-    const navLinks = document.querySelector('.nav-links');
+            portfolioItems.forEach(item => {
+                const itemCategory = item.getAttribute("data-category");
 
-    if (burgerIcon && navLinks) {
-        burgerIcon.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            burgerIcon.classList.toggle('active');
-        });
-    }
-
-    // Smooth scrolling for navigation links
-    const navLinksSmooth = document.querySelectorAll('.nav-links a[href^="#"]');
-    navLinksSmooth.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (navLinks && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    burgerIcon.classList.remove('active');
+                if (itemCategory === selectedCategory) {
+                    item.classList.add("active");
+                    item.style.display = "block";
+                } else {
+                    item.classList.remove("active");
+                    item.style.display = "none";
                 }
-            }
+            });
         });
     });
 
-    // Form submission handling
-    const contactForm = document.querySelector('#contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Log form data (replace with actual form submission logic)
-            console.log('Form submitted:', { name, email, message });
-            
-            // Show success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
+    // Mobile Navigation
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+        
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
         });
-    }, observerOptions);
-
-    // Observe all sections for animation
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        observer.observe(section);
+        
+        // Burger Animation
+        burger.classList.toggle('toggle');
     });
+});
 
-    // Resume download functionality
-    const downloadResumeBtn = document.querySelector('.download-resume');
-    if (downloadResumeBtn) {
-        downloadResumeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const resumeLink = this.getAttribute('href');
-            if (resumeLink) {
-                window.open(resumeLink, '_blank');
-            }
-        });
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            // Close mobile menu if open
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        }
+    });
+});
+
+// Form submission handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formProps = Object.fromEntries(formData);
+        
+        // Here you would typically send the form data to a server
+        // For now, we'll just log it and show a success message
+        console.log('Form submitted:', formProps);
+        
+        // Show success message
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+    });
+}
+
+// Add animation to elements when they come into view
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+    .nav-active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 8vh;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        width: 50%;
+        padding: 2rem;
+        transform: translateX(0%);
+        transition: transform 0.5s ease-in;
     }
 
-    // Preview resume functionality
-    const previewResumeBtn = document.querySelector('.preview-resume');
-    if (previewResumeBtn) {
-        previewResumeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const resumeLink = this.getAttribute('href');
-            if (resumeLink) {
-                window.open(resumeLink, '_blank');
-            }
-        });
+    .nav-active li {
+        opacity: 0;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+
+document.head.appendChild(style);
+
+// Example filtering code
+const category = this.getAttribute('data-category');
+portfolioItems.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+        item.style.display = 'block';
+    } else {
+        item.style.display = 'none';
     }
 }); 
